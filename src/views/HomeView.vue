@@ -1,17 +1,30 @@
 <template>
   <div class="home">
-    <NavBar></NavBar>
+    <PollsComponent></PollsComponent>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import NavBar from '@/components/NavBar.vue'
+import PollsComponent from '@/components/PollsComponent.vue';
 
 export default {
   name: 'HomeView',
   components: {
-    NavBar
-  }
-}
+    PollsComponent,
+  },
+};
 </script>
+
+<style>
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+</style>

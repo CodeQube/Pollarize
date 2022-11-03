@@ -1,12 +1,23 @@
 |
 <template>
   <nav>
-    <router-link class="pollarize" to="/">Pollarize</router-link> |
-    <router-link to="/create-new">Opprett ny</router-link> |
-    <router-link to="/login">Logg ut</router-link>
+    <router-link class="pollarize" to="/">Pollarize</router-link>
+    <router-link v-if="isLogedIn" to="/create-new">Opprett ny</router-link>
+    <router-link v-if="isLogedIn" to="/login">Logg ut</router-link>
   </nav>
   <router-view />
 </template>
+
+<script>
+export default {
+  name: 'App',
+  data() {
+    return {
+      isLogedIn: true,
+    };
+  },
+};
+</script>
 
 <style>
 body {
