@@ -6,7 +6,7 @@
     }"
   >
     <h1>
-      {{ text }}
+      <div class="animate__animated animate__wobble">{{ text }}</div>
     </h1>
   </div>
 </template>
