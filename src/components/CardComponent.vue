@@ -1,12 +1,14 @@
 <template>
   <div
-    class="main-container"
+    class="animate__animated animate__slideInLeft main-container"
     :style="{
       border: status == 'Active' ? '2px solid #53BC64' : '2px solid #BC5353',
     }"
   >
     <h1>
-      <div class="animate__animated animate__wobble">{{ text }}</div>
+      <div class="animate__animated animate__fadeInRightBig">
+        {{ text }}
+      </div>
     </h1>
   </div>
 </template>
@@ -48,5 +50,9 @@ h1 {
   font-size: 15px;
   font-weight: normal;
   color: #ffffff;
+}
+
+.animate__fadeInRightBig {
+  --animate-delay: 0.5s;
 }
 </style>

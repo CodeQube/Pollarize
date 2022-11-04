@@ -1,10 +1,6 @@
 <template>
   <div class="home" v-for="item in polls" v-bind:key="item">
-    <CardComponent
-      @click="goToClickedPoll()"
-      :text="item.pollText"
-      :status="item.status"
-    ></CardComponent>
+    <CardComponent :text="item.pollText" :status="item.status"></CardComponent>
   </div>
 </template>
 
@@ -18,12 +14,6 @@ export default {
   },
   props: {
     polls: Array,
-  },
-  methods: {
-    goToClickedPoll() {
-      // this.$router.push('/poll' + id);
-      this.$router.push({ name: 'poll', params: { polls: this.pollText } });
-    },
   },
 };
 </script>

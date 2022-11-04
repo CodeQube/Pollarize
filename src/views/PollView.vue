@@ -1,26 +1,25 @@
 <template>
-  <div class="home">
-    <PollsComponent :polls="polls"></PollsComponent>
+  <div class="poll" v-for="item in polls" v-bind:key="item">
+    <CardComponent :text="item.question"></CardComponent>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import PollsComponent from '@/components/PollsComponent.vue';
-
+import CardComponent from '@/components/CardComponent.vue';
 export default {
-  name: 'HomeView',
-  components: {
-    PollsComponent,
-  },
+  name: 'PollView',
   props: {
     polls: Array,
+  },
+  components: {
+    CardComponent,
   },
 };
 </script>
 
 <style>
-.home {
+.poll {
   display: flex;
   flex-direction: column;
   justify-content: center;

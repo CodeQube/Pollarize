@@ -5,7 +5,7 @@
     <router-link v-if="isLogedIn" to="/create-new">Opprett ny</router-link>
     <router-link v-if="isLogedIn" to="/login">Logg ut</router-link>
   </nav>
-  <router-view />
+  <router-view :polls="polls" />
 </template>
 
 <script>
@@ -14,6 +14,20 @@ export default {
   data() {
     return {
       isLogedIn: true,
+      polls: [
+        {
+          id: 0,
+          pollText: 'Trivsel på arbeidsplassen',
+          status: 'Active',
+          question: 'Trives du på jobben?',
+        },
+        {
+          id: 1,
+          pollText: 'Trivsel på arbeidsplassen2',
+          status: 'Inactive',
+          question: 'Kan vi gjøre noe for å forbedre din arbeidsdag?',
+        },
+      ],
     };
   },
 };
