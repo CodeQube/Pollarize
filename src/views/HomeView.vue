@@ -1,12 +1,13 @@
 <template>
   <div class="home">
-    <PollsComponent :polls="polls"></PollsComponent>
+    <PollsComponent></PollsComponent>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import PollsComponent from '@/components/PollsComponent.vue';
+
 
 export default {
   name: 'HomeView',

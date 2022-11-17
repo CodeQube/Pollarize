@@ -2,7 +2,7 @@
   <div
     class="animate__animated animate__slideInLeft main-container"
     :style="{
-      border: status == 'Active' ? '2px solid #53BC64' : '2px solid #BC5353',
+      border: status == 'Active' ? '2px solid #53BC64' : status == 'Inactive' ? '2px solid #BC5353' : '2px solid white' ,
     }"
   >
     <h1>
@@ -23,6 +23,10 @@ export default {
     },
     status: {
       type: String,
+      required: false,
+    },
+    id: {
+      type: Number,
       required: false,
     },
   },

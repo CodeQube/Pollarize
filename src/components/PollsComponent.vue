@@ -1,29 +1,25 @@
 <template>
-  <div class="home" v-for="item in polls" v-bind:key="item">
+  <div class="home" v-for="polls in pollsStore.polls" v-bind:key="polls.id">
     <CardComponent
-      @click="goToClickedPoll()"
-      :text="item.pollText"
-      :status="item.status"
+      @click="goToClickedPoll(item.id)"
+      :text="polls.pollText"
+      :status="polls.status"
     ></CardComponent>
   </div>
 </template>
 
 <script>
 import CardComponent from './CardComponent.vue';
+import { usePollsStore } from '@/store/PollsStore';
+import { mapStores} from 'pinia';
 
 export default {
-  name: 'PollComponent',
+  name: 'PollsComponent',
+  computed: {
+    ...mapStores(usePollsStore),
+  },
   components: {
     CardComponent,
-  },
-  props: {
-    polls: Array,
-  },
-  methods: {
-    goToClickedPoll() {
-      // this.$router.push('/poll' + id);
-      this.$router.push({ name: 'poll', params: { polls: this.pollText } });
-    },
   },
 };
 </script>

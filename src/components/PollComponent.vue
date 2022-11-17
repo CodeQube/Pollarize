@@ -1,6 +1,6 @@
 <template>
   <div class="home" v-for="item in polls" v-bind:key="item">
-    <CardComponent :text="item.pollText" :status="item.status"></CardComponent>
+    <CardComponent :text="item.pollText"></CardComponent>
   </div>
 </template>
 
@@ -11,9 +11,6 @@ export default {
   name: 'PollComponent',
   components: {
     CardComponent,
-  },
-  props: {
-    polls: Array,
   },
 };
 </script>

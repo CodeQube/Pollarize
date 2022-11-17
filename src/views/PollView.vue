@@ -1,9 +1,9 @@
 <template>
-  <div class="poll" v-for="item in polls" v-bind:key="item">
-    <CardComponent :text="item.question"></CardComponent>
+  <div class="poll">
+    <CardComponent :text="this.polls[item.id].question" @click="log"></CardComponent>
   </div>
 </template>
-
+<!-- polls[questionId].text -->
 <script>
 // @ is an alias to /src
 import CardComponent from '@/components/CardComponent.vue';
@@ -14,6 +14,12 @@ export default {
   },
   components: {
     CardComponent,
+  },
+  methods: {
+    // eslint-disable-next-line no-console
+    log() {
+      console.log(this);
+    },
   },
 };
 </script>
@@ -30,3 +36,4 @@ export default {
   color: #ffffff;
 }
 </style>
+<!-- //v-for="item in polls"  -->
